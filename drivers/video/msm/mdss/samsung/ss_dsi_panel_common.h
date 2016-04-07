@@ -324,6 +324,9 @@ struct samsung_display_dtsi_data {
 	/* Backlight IC discharge delay */
 	int blic_discharging_delay_tft;
 	int cabc_delay;
+
+	/* Outdoor mode */
+	int outdoor_mode_support; 
 };
 
 struct samsung_brightenss_data {

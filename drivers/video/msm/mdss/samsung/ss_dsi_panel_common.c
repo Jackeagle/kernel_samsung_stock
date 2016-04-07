@@ -2998,6 +2998,9 @@ void mdss_samsung_panel_parse_dt(struct device_node *np,
 
 	/* Set Mdnie lite HBM_CE_TEXT_MDNIE mode used */
 	vdd->dtsi_data[ctrl->ndx].hbm_ce_text_mode_support  = of_property_read_bool(np, "samsung,hbm_ce_text_mode_support");
+	
+	/* Set Flag for outdoor mode support */
+	vdd->dtsi_data[ctrl->ndx].outdoor_mode_support  = of_property_read_bool(np, "samsung,outdoor_mode_support");
 
 	/* Set Backlight IC discharge time */
 	rc = of_property_read_u32(np, "samsung,blic-discharging-delay-us", tmp);

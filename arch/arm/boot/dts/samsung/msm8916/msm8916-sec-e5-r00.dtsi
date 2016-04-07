@@ -29,6 +29,13 @@
 };
 
 &soc {
+	samsung,simslot {
+		compatible = "simslot";
+		samsung,sim-slot = <&msm_gpio 101 0x1>;
+		//low-is-dual; // If the value of sim-slot gpio is 'low' in 'dual sim' device, you must set this boolean property.
+		status = "ok";
+	};
+
 	samsung,vibrator {
 	        pinctrl-names = "tlmm_motor_en_active","tlmm_motor_en_suspend";
 	        pinctrl-0 = <&motor_en_active>;
@@ -150,11 +157,11 @@
 				mid_track_alive = <0>;
 				mid_auto_track_en = <0>;
 				timeout_current_level = <50>;
-				strobe_current = <500>;
+				strobe_current = <600>;
 				strobe_timeout = <544>;
 				torch_current = <63>;
 				lv_protection = <3000>;
-				mid_level = <4400>;
+				mid_level = <4800>;
 				rt5033,led1-gpio = <&msm_gpio 34 0x00>;
 				rt5033,led2-gpio = <&msm_gpio 36 0x00>;
 				pinctrl-names = "fled_default","fled_sleep";
